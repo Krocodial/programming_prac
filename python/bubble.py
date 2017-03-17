@@ -4,6 +4,10 @@
 
 import sys
 
+if(len(sys.argv) < 2):
+	print("not enough arguments")
+	sys.exit()
+
 try:
 	f = open(sys.argv[1], 'r')
 except IOError:
@@ -19,17 +23,16 @@ def switch(a, b):
 	tmp[b] = c
 
 tmp = numbers
-
+print("original")
 print(numbers)
 print('++++++++++++++++')
 
 for i in numbers:
 	for j in range(len(numbers)-1):
 		if(numbers[j] < numbers[j+1]):
-			print(str(numbers[j]) + ', ' + str(numbers[j+1]))
 			switch(j, j+1)
 	numbers = tmp
-
+print("sorted")
 print(numbers)
 
 f.close()
