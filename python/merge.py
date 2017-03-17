@@ -1,3 +1,5 @@
+#!/usr/bin/python3.5
+
 import sys
 
 if(len(sys.argv) < 2):
@@ -7,7 +9,7 @@ if(len(sys.argv) < 2):
 try:
 	f = open(sys.argv[1], 'r')
 except IOError:
-	print('error opening the file'
+	print('error opening the file')
 	sys.exit()
 
 array = []
@@ -19,6 +21,10 @@ for line in f:
 #Now we merge sort our array
 
 #first we need our recursive function
+
+print('original')
+print(array)
+
 
 def merge_together(start, middle, end):
 	#need to iterate through all elements and sort in place
@@ -37,3 +43,6 @@ def merge_sort(start, end):
 	#now we have arrays of 1 or 2 elements, so join and sort them
 
 	merge_together(start, middle, end)
+
+print('++++++')
+print('final')
