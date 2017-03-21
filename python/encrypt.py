@@ -1,5 +1,8 @@
 #!/usr/bin/python3.5
 
+#investigate chr() and ord()
+#built in functions used to see the unicode of a string
+
 import sys
 import os
 
@@ -15,8 +18,13 @@ except:
 print(os.path.splitext(sys.argv[1])[0] + '.jpg')
 
 if(sys.argv[2] == 'encrypt'):
-	outf = open(os.path.splitext(sys.argv[1])[0] + '.encr', 'w+')
+	outf = open(os.path.splitext(sys.argv[1])[0] + '.encr', 'w')
 	for line in inf:
-		outf.write(~line)
+		line = line.rstrip()
+		words = line.split()
+
+		for w in words:
+			outf.write(chr(
+	
 
 
